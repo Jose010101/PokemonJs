@@ -1,0 +1,206 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="pokeimg/icon.gif" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/java.js" defer></script>
+    </head>
+    <body id="body">
+
+       
+
+<div class="container" id="opcao">
+    <div class="row ">
+        <div class="col jog1">
+    <p class="Jogador1" id="Jogador1">Player1</p>
+</div>
+</div>
+<div class="row">
+    <div class="col esco1">Choose your Pokemon:</div>
+</div>
+<div class="row">
+    <div class="col escopok1" id="escolha1">
+        <img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charmander.png" class="Charmander"  id="CharmanderJ1" onclick="CharmanderJ1()">
+        <img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/bulbasaur.png" class="Bulbasaur" id="BulbasaurJ1" onclick="BulbasaurJ1()">
+       <img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/squirtle.png" class="Squirtle" id="SquirtleJ1" onclick="SquirtleJ1()">
+    </div>
+</div>
+
+<div class="row jog2">
+    <div class="col jog2" id="escolha2">
+        <p class="Jogador2" id="Jogador2">Player2</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col esco2" id="EscolhaOP">Choose the enemy Pokemon:</div>
+</div>
+<div class="row">
+    <div class="col escopok2" id="PokemonOPEscolha">
+        <img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charmander.png" class="Charmander" id="CharmanderJ2" onclick="CharmanderJ2()">
+        <img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/bulbasaur.png" class="Bulbasaur" id="BulbasaurJ2" onclick="BulbasaurJ2()">
+        <img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/squirtle.png" class="Squirtle" id="SquirtleJ2" onclick="SquirtleJ2()">
+    </div>
+</div>
+<div class="row iniciar-jogo">
+    <div class="col Iniciar">
+        <button onclick="aparecer()" id="Iniciar">Start</button>
+    </div>
+</div>
+</div>
+
+    <div class="container-fluid" id="campo-batalha">
+
+
+        <!-- Pokemon Oponente código -->
+
+    <!-- Health bar Inimiga Início -->
+    <div class="row linha-oponente " id="">
+    <div class="col linha-oponente" id="linha-oponente">
+    <div class="row">
+    <div class="col-9 info-nome" id="info-nome-op">Bulbasaur <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-male" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2H9.5zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+    </svg></div>
+    <div class="col-3 info" id="levelOP">Lv5
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-1" id="hpOP">HP</div>
+    <div class="col" id="healthOP">
+    <div class="vida-oponente" id="vida-oponente">
+    <p id="vida-oponente-total"></p>
+    </div>
+    </div>
+    </div>
+
+    </div>
+    
+    </div>
+    <!-- Health bar Inimiga Fim -->
+
+    <!-- Pokemon Oponente sprite início -->
+    <div class="row poke1 pkm-op-escolha">
+    <div class="col pokeOP"><img src="pokeimg/Bulbasaur.gif" id="PokemonOP" class="pkm-op-escolhido">
+    </div>
+    </div>
+    <!-- Pokemon Oponente sprite fim -->
+
+        <!-- Pokemon Oponente código fim -->
+
+
+
+
+
+        <!-- Pokemon Aliado código -->
+    <!-- Pokemon Aliado sprite Início -->
+    <div class="row poke2 meu-pkm-info">
+    <div class="col-4 pokeM meu-pkm"><img src="pokeimg/squirtleqrwwr.webp" id="meuPokemon"></div>
+    <!-- Pokemon Aliado sprite Fim -->
+
+    <!-- Health bar Aliada Início -->
+    <div class="col-linha linha-meu-pokemon meu-info" id="linha-meu-pokemon">
+    <div class="row ">
+    <div class="col-9 info" id="info-nome-ali">Squirtle<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-female" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5z"/>
+    </svg>
+    </div>
+    <div class="col-3 info" id="levelMeu" id- >Lv5</div>
+    </div>
+    <div class="row">
+    <div class="col-1" id="hpMeu">HP</div>
+    <div class="col" id="healthMeu">
+    <div class="vida-meu-pkm" id="vida-meu-pkm">
+    <p id="vida-meu-pkm-total"></p>
+    </div>
+    </div>
+    </div> 
+     <div class="row">
+    <div class="col info"><p id="vidanumero">20/ 20</p>
+        <div class="row xp justify-content-space-between" id="xp">
+<div class="col-1 expescrita" id="expescrita">Exp</div>
+<div class="col-9 xp-barra" id="xp-barra">
+    <table><tr><td><td><td><td><td><td></td><td></td><td></td><td><td><td><td><td><td></td><td></td><td></td><td><td><td><td><td><td></td><td></td><td></td><td><td><td><td><td><td></td><td></td><td></td><td><td><td><td><td><td></td><td></td><td></td><td><td><td><td><td><td></td><td></td><td></td><td><td><td><td><td><td></td><td></td><td></td><td><td><td><td><td><td></td><td></td><td></td><td><td><td><td><td><td></td><td></td><td></td><td><td><td><td><td><td></td><td></td><td></td><td><td><td><td><td><td></td><td></td><td></td><td><td><td><td><td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+</div>
+        </div>
+    </div>
+    </div>
+
+  
+    
+    <!-- Health bar Aliada Fim -->
+    </div>
+    </div>
+
+    <!-- Ataques Início -->
+    <div class="row ataques-meu-pkm fixed-end " id="ataques-meu-pkm" >
+        <div class="col-6">
+        <div class="row">
+        <div class="col">
+            <p id="Oque">What will</p>
+            <p id="Fara"> </p>
+          
+        <button id="ataque1" onclick="ataque1PkmAli()" onmouseover="Info1()" onmouseout="sumirInfo1()">Ataque1</button>
+        </div>
+        <div class="col">
+        <button id="ataque3" onclick="ataque3PkmAli()" onmouseover="Info3()" onmouseout="sumirInfo2()">Ataque2</button>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col">
+        <button id="ataque2" onclick="ataque2PkmAli()">-</button>
+        </div>
+        <div class="col">
+        <button id="ataque4" onclick="ataque4PkmAli()">-</button>
+        </div>
+        </div>
+    </div>
+        
+    <!-- Ataques Fim -->
+
+    <!-- InfoAtaques Início -->
+    <div class="col infoataques" id="infoataques">
+<div class="row justify-content-center">
+    <div class="col-2">
+        <p id="PP">   </p>
+        <button onclick="Fight()" id="Fight">Fight</button>
+    </div>
+    
+    <div class="col">
+        <p id="PPInfo"> </p>
+        <button onclick="Bag()" id="Bag">Bag</button>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-2">
+        <p id="AtqTipo"> </p>
+        <button onclick="Pokemon()" id="PokemonTroca">Pokemon</button>
+    </div>
+    <div class="col" >
+        <button onclick="Run()"id="Run">Run</button>
+    </div>
+</div>
+    </div>
+    <!-- InfoAtaques Fim -->
+    </div>
+</div>
+   
+        <!-- Pokemon Aliado código fim -->
+
+    
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+    </html>
